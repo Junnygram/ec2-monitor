@@ -2,6 +2,11 @@
 
 Monitor your EC2 instances with Grafana dashboards and Prometheus metrics.
 
+## 📊 Dashboard Preview
+
+![EC2 Monitoring Dashboard](screenshot.png)
+*Real-time monitoring dashboard showing CPU, memory, disk, and network metrics*
+
 ## Quick Setup
 
 1. **Clone this repository**
@@ -25,13 +30,26 @@ Monitor your EC2 instances with Grafana dashboards and Prometheus metrics.
 
 ## What's Included
 
-- Prometheus for metrics collection
-- Grafana for visualization
-- Node Exporter for system metrics
-- Nginx web server
+- 🔍 **Prometheus** for metrics collection
+- 📊 **Grafana** for visualization dashboards
+- 📈 **Node Exporter** for system metrics
+- 🌐 **Nginx** web server
+- 🧪 **Testing scripts** for CPU/memory spikes
+
+## Testing Your Setup
+
+Test your monitoring with included scripts:
+
+```bash
+# Test CPU monitoring
+./cpu_spike.sh
+
+# Test memory monitoring  
+./memory_spike.sh
+```
 
 ## Requirements
 
 - Ubuntu EC2 instance
 - SSH access to your server
-# ec2-monitor
+- Docker & Docker Compose (installed by script)
