@@ -46,7 +46,7 @@ cd ec2-monitor
 
 # Deploy monitoring stack
 echo "🚀 Deploying monitoring stack..."
-sudo docker-compose -f "./build-process/docker-compose.yml" up -d --build
+sudo docker-compose -f "./docker-compose.yml" up -d --build
 
 echo "✅ Setup complete!"
 echo "📊 Access Grafana at: http://YOUR_SERVER_IP:3000"
