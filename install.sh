@@ -17,23 +17,17 @@ sudo apt install nginx -y
 echo "🐳 Installing Docker..."
 sudo apt install docker.io -y
 
-# Add ubuntu user to docker group
+# Add current user to docker group
 echo "👤 Adding user to docker group..."
-sudo usermod -aG docker ubuntu
-
-# Activate group changes
-newgrp docker
+sudo usermod -aG docker $USER
 
 # Set permissions for Docker socket
 echo "🔐 Setting Docker socket permissions..."
-sudo chmod 777 /var/run/docker.sock
+sudo chmod 666 /var/run/docker.sock
 
-# Download and install Docker Compose
+# Install Docker Compose via apt
 echo "📥 Installing Docker Compose..."
-sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-# Make Docker Compose executable
-sudo chmod +x /usr/local/bin/docker-compose
+sudo apt install docker-compose -y
 
 # Verify Docker Compose installation
 echo "✅ Verifying Docker Compose installation..."
