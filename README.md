@@ -5,13 +5,14 @@ Complete monitoring solution for EC2 instances with real-time dashboards and ale
 ## 📊 Dashboard Preview
 
 ![EC2 Monitoring Dashboard](screenshot.png)
-*Real-time monitoring dashboard showing CPU, memory, disk, and network metrics*
+_Real-time monitoring dashboard showing CPU, memory, disk, and network metrics_
 
 ## 🚀 Quick Setup
 
 ### 1. Configure EC2 Security Groups
 
 Enable these ports in your EC2 security group:
+
 - **Port 3000** - Grafana Dashboard
 - **Port 9090** - Prometheus Metrics
 - **Port 9100** - Node Exporter
@@ -34,17 +35,20 @@ chmod +x install.sh
 ## 📈 Grafana Dashboard Setup
 
 ### Step 1: Login to Grafana
+
 1. Open `http://YOUR_EC2_PUBLIC_IP:3000`
 2. **Username**: `admin`
 3. **Password**: `4fsd#dad2e`
 
 ### Step 2: Add Prometheus Data Source
+
 1. Click **"Add your first data source"**
 2. Select **"Prometheus"**
 3. Set URL: `http://YOUR_EC2_PUBLIC_IP:9090`
 4. Click **"Save & Test"**
 
 ### Step 3: Import Node Exporter Dashboard
+
 1. Click **"+"** → **"Import"**
 2. Enter Dashboard ID: **`1860`**
 3. Click **"Load"**
@@ -52,7 +56,9 @@ chmod +x install.sh
 5. Click **"Import"**
 
 ### Step 4: Visualize Your Metrics
+
 Your dashboard will show:
+
 - 🖥️ CPU Usage & Load
 - 💾 Memory Utilization
 - 💿 Disk I/O & Space
@@ -90,6 +96,7 @@ Watch the spikes appear in your Grafana dashboard!
 ## 🔧 Troubleshooting
 
 **Services not accessible?**
+
 ```bash
 # Check if containers are running
 docker ps
@@ -102,13 +109,7 @@ docker-compose restart
 ```
 
 **Dashboard not loading data?**
+
 - Verify Prometheus URL in data source
 - Check if all ports are open in security groups
 - Ensure EC2 public IP is correct
-
-## 🎯 Next Steps
-
-- Set up alerting rules in Prometheus
-- Configure email notifications
-- Add custom dashboards for your applications
-- Implement log monitoring with ELK stack
